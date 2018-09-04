@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Proyecto WebVR</title>
+  <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+</head>
+<body>
+  <a-scene>
+    <a-assets>
+      <img src="./assets/img1.jpg" id="a1">
+      <img src="./assets/img2.jpg" id="a2">
+      <img src="./assets/img3.jpg" id="a3">
+    </a-assets>
+
+    <a-image src="#a1" position="-1.5 0.5 -3" onclick="show('a1')"></a-image>
+    <a-image src="#a2" position="0 0.5 -3" onclick="show('a2')"></a-image>
+    <a-image src="#a3" position="1.5 0.5 -3" onclick="show('a3')"></a-image>
+
+    <a-sky src="#a1" id="sky"></a-sky>
+
+    <a-camera>
+      <a-cursor></a-cursor>
+    </a-camera>
+  </a-scene>
+
+  <script>
+    function show(id) {
+      document.getElementById('sky').setAttribute('src', '#' + id);
+    }
+  </script>
+</body>
+</html>
